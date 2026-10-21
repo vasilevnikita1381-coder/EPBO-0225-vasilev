@@ -20,3 +20,4 @@
 - `css/styles.css` — стили (в нашем случае просто `styles.css`).
 - `script.js` — логика загрузки данных и заполнения страницы.
 - `dataset/` — исходные данные (content.csv, navigation.json).
+Проект проверен.
