@@ -1,0 +1,206 @@
+/* Базовые настройки */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f4f6f9;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Шапка (Flexbox) */
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1rem 2rem;
+  background-color: #1d1f2b;
+  color: #fff;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.site-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+nav {
+  display: flex;
+  gap: 1rem;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  padding: 0.5rem;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+nav a:hover, nav a:focus {
+  background-color: #3b3f52;
+  outline: 2px solid #7aa2ff;
+}
+
+/* Секции */
+section {
+  margin: 2rem 0;
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+h2 {
+  margin-top: 0;
+  border-bottom: 2px solid #eef1f6;
+  padding-bottom: 0.5rem;
+}
+
+/* Карточки (Flexbox) */
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.card {
+  flex: 1 1 18rem;
+  border: 1px solid #d7d7d7;
+  border-radius: 8px;
+  padding: 1.25rem;
+  background: #fafbfc;
+}
+
+.card h3 {
+  margin-top: 0;
+  color: #1d4ed8;
+}
+
+.badge {
+  display: inline-block;
+  font-size: 0.8rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  background: #e6efff;
+  color: #1d4ed8;
+  font-weight: bold;
+}
+
+/* Таблица */
+.table-responsive {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+caption {
+  text-align: left;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: #666;
+}
+
+th, td {
+  border: 1px solid #d7d7d7;
+  padding: 0.75rem;
+  text-align: left;
+}
+
+thead th {
+  background-color: #eef1f6;
+}
+
+/* Форма */
+.feedback-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 500px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+label {
+  font-weight: bold;
+  font-size: 0.95rem;
+}
+
+input, select, textarea {
+  padding: 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: 2px solid #1d4ed8;
+  border-color: transparent;
+}
+
+.submit-btn {
+  padding: 0.75rem;
+  background-color: #1d4ed8;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 0.5rem;
+}
+
+.submit-btn:hover {
+  background-color: #1740b0;
+}
+
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+/* АДАПТИВНОСТЬ (Медиазапрос для мобильных) */
+@media (max-width: 720px) {
+  .site-header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+  }
+  
+  nav {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .card {
+    flex: 1 1 100%;
+  }
+}

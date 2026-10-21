@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Информационный портал факультета</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Шапка сайта -->
+  <header class="site-header">
+    <div class="logo-container">
+      <img src="dataset/assets/logo.svg" alt="Логотип факультета" class="logo" width="40" height="40" onerror="this.style.display='none'">
+      <span class="site-title">Портал факультета</span>
+    </div>
+    
+    <nav aria-label="Основная навигация" id="main-nav">
+      <!-- Сюда скрипт вставит ссылки из navigation.json -->
+      <a href="#tracks">Направления (заглушка)</a>
+      <a href="#schedule">Расписание (заглушка)</a>
+      <a href="#register">Регистрация (заглушка)</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    
+    <!-- Раздел 0: О курсе (новый) -->
+    <section id="about" aria-labelledby="about-title">
+      <h2 id="about-title">О курсе</h2>
+      <p>Добро пожаловать на информационный портал факультета. Здесь вы найдете основные направления обучения, расписание мероприятий и сможете зарегистрироваться на них. Данные портала обновляются автоматически из базы факультета.</p>
+    </section>
+
+    <!-- Раздел 1: Карточки -->
+    <section id="tracks" aria-labelledby="tracks-title">
+      <h2 id="tracks-title">Направления обучения</h2>
+      <div class="cards" id="cards-container">
+        <!-- Сюда скрипт вставит карточки из content.csv -->
+        <p class="loading">Загрузка карточек...</p>
+      </div>
+    </section>
+
+    <!-- Раздел 2: Таблица -->
+    <section id="schedule" aria-labelledby="schedule-title">
+      <h2 id="schedule-title">Расписание мероприятий</h2>
+      <div class="table-responsive">
+        <table>
+          <caption>План учебных докладов</caption>
+          <thead>
+            <tr>
+              <th scope="col">Время</th>
+              <th scope="col">Название</th>
+              <th scope="col">Категория</th>
+              <th scope="col">Баллы</th>
+            </tr>
+          </thead>
+          <tbody id="schedule-body">
+            <!-- Сюда скрипт вставит строки из content.csv -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Раздел 3: Форма -->
+    <section id="signup" aria-labelledby="signup-title">
+      <h2 id="signup-title">Регистрация на мероприятие</h2>
+      <form class="feedback-form" action="#" method="post">
+        <div class="form-group">
+          <label for="name">Имя и фамилия</label>
+          <input type="text" id="name" name="name" required minlength="2" maxlength="50" placeholder="Иван Иванов">
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required placeholder="example@mail.ru">
+        </div>
+
+        <div class="form-group">
+          <label for="track">Направление</label>
+          <select id="track" name="track" required>
+            <option value="">— выберите направление —</option>
+            <option value="frontend">Frontend</option>
+            <option value="backend">Backend</option>
+            <option value="mobile">Mobile</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="age">Возраст</label>
+          <input type="number" id="age" name="age" min="14" max="99" required placeholder="18">
+        </div>
+
+        <div class="form-group">
+          <label for="comment">Комментарий (необязательно)</label>
+          <textarea id="comment" name="comment" maxlength="300" rows="3"></textarea>
+        </div>
+
+        <button type="submit" class="submit-btn">Отправить заявку</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 Институт перспективных технологий. Практическая работа №1.</p>
+  </footer>
+
+  <!-- Подключаем скрипт -->
+  <script src="script.js"></script>
+</body>
+</html>
